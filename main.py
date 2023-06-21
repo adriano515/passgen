@@ -49,7 +49,7 @@ def password_generator(length, complexity):
         password = password[:-1]
         return password
     else:
-        print("Opción invalida para la complejidad de contraseña")
+        print("Opción invalida para la complejidad")
         return
     for i in range(length):
         password += secrets.choice(characters)
