@@ -24,11 +24,14 @@ def get_user_input():
 
     complexity = None
     while complexity not in levels:
-        complexity = int(input("Escoger un nível de complejidad de contraseña (1-4): "))
+        complexity = int(input("Escoger un nível de "
+                               "complejidad de contraseña (1-4): "))
         if complexity == 4:
-            length = int(input("Cuantas palabras deseas que tenga tu contraseña, 3 a 15 palabras: "))
+            length = int(input("Cuantas palabras deseas que "
+                               "tenga tu contraseña, 3 a 15 palabras: "))
         elif complexity in levels and complexity != 4:
-            length = int(input("Ingresar longitud de la contraseña, 8 a 100 caracteres: "))
+            length = int(input("Ingresar longitud de la "
+                               "contraseña, 8 a 100 caracteres: "))
         if complexity not in levels:
             print(f"{complexity} no es un número válido.")
     return length, complexity

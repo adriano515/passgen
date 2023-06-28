@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+
+import subprocess
+import sys
+
+# Obtener la ruta al intérprete de Python dentro del entorno virtual
+python_executable = sys.executable
+
+# Ejecutar el comando para ejecutar pruebas utilizando el intérprete de Python del entorno virtual
+result = subprocess.run([python_executable, '-m', 'unittest', 'main.py'], stdout=subprocess.PIPE)
+
+if result.returncode != 0:
+    print("¡Las pruebas fallaron! No se permite realizar el push.")
+    print(result.stdout.decode())
+    exit(1)
+else: 
+    print("Pruebas unitarias pasaron, continuando")
